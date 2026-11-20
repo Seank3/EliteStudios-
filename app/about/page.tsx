@@ -6,7 +6,7 @@ export default function About() {
   return (
     <>
       <section className="relative min-h-[60vh] flex items-end overflow-hidden">
-        <Image src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07?q=80&w=2400&auto=format&fit=crop" alt="About Elite Studios" fill className="object-cover opacity-50" />
+        <Image src="/media/photos/hero_studio_cream.jpg" alt="About Elite Studios" fill className="object-cover opacity-50" />
         <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-obsidian/30" />
         <div className="relative max-w-7xl mx-auto px-5 md:px-8 py-28 w-full">
           <p className="font-mono text-xs tracking-[0.35em] text-gold mb-5">ABOUT ELITE STUDIOS</p>
@@ -22,8 +22,8 @@ export default function About() {
         </Reveal>
         <Reveal>
           <div className="grid grid-cols-2 gap-4">
-            {["photo-1493863641943-9b68992a8d07","photo-1598488035139-bdbb2231ce04","photo-1574717024653-61fd2cf4d44d","photo-1470229722913-7c0e2dbbafd3"].map((id) => (
-              <div key={id} className="relative aspect-square overflow-hidden"><Image src={`https://images.unsplash.com/${id}?q=80&w=800&auto=format&fit=crop`} alt="Elite Studios creative work" fill className="object-cover" /></div>
+            {["/media/photos/portrait_striped.jpg","/media/photos/portrait_white_shirt.jpg","/media/photos/portrait_black_dress.jpg","/media/photos/music_live_singer.jpg"].map((src) => (
+              <div key={src} className="relative aspect-square overflow-hidden"><Image src={src} alt="Elite Studios creative work" fill className="object-cover" /></div>
             ))}
           </div>
         </Reveal>

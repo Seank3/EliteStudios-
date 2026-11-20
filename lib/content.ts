@@ -1,98 +1,75 @@
 /**
- * ELITE STUDIOS — CMS CONTENT LAYER
- * ============================================================
- * All business facts below are EDITABLE placeholders.
- * Research (Nov 2026) found NO verified public listing for
- * "Elite Studios Kungu" — see RESEARCH_REPORT.md.
- * Replace every [EDITABLE] value with confirmed business data
- * via /admin (Content Manager) before public launch.
- * Never publish invented founder names, phones, prices or clients.
+ * ELITE STUDIOS — verified content layer
+ * --------------------------------------
+ * VERIFIED (from the company's own TikTok profile @eliteprostudios, Nov 2026):
+ *   • Name: Elite studios  • Handle: @eliteprostudios
+ *   • Bio: "Photography Videography cinematography And production"
+ *   • WhatsApp: +256 776 777 030 (also on Instagram bio)
+ *   • Region: Uganda (UG)  • 5,900 followers, 144.3K likes, 222 videos
+ *   • Media in /public/media are the studio's own published work.
+ *
+ * STILL NEEDS FOUNDER CONFIRMATION (marked [EDITABLE]):
+ *   founder name/title, physical address, email, opening hours,
+ *   Instagram URL slug (handle shown as @eliteprostudios — confirm exact link),
+ *   pricing, team size, founding year.
  */
 
 export const SITE = {
-  name: "ELITE STUDIOS",
-  location: "Kungu, Kampala, Uganda",
+  name: "Elite Studios",
+  legalName: "Elite Studios Kungu",
+  handle: "@eliteprostudios",
   tagline: "CREATE. PRODUCE. ENTERTAIN.",
   support: "Where creativity, sound and visual storytelling come together.",
-  heroCopy:
-    "A creative entertainment company bringing photography, sound and visual storytelling together — from Kungu, Kampala to the world.",
-  // [EDITABLE] — confirm before launch
-  phone: "+256 700 000 000",
-  whatsapp: "256700000000",
-  email: "hello@elitestudios.ug",
+  taglineVerified: "Photography · Videography · Cinematography · Production",
+  city: "Kampala",
+  area: "Kungu",
+  country: "Uganda",
+  whatsapp: "256776777030", // VERIFIED
+  phone: "+256 776 777 030", // VERIFIED (TikTok bio)
+  email: "[EDITABLE] hello@elitestudios.ug",
   address: "Kungu, Kampala, Uganda",
-  hours: "Mon–Sat · 9:00–18:00 EAT",
+  hours: "[EDITABLE] Mon – Sat · 9:00 – 19:00",
   socials: {
-    instagram: "https://instagram.com/",
-    facebook: "https://facebook.com/",
-    tiktok: "https://tiktok.com/",
-    youtube: "https://youtube.com/",
+    tiktok: "https://www.tiktok.com/@eliteprostudios", // VERIFIED
+    instagram: "https://www.instagram.com/eliteprostudios/", // handle VERIFIED; confirm link
+    facebook: "[EDITABLE]",
+    youtube: "[EDITABLE]",
+  },
+  stats: {
+    followers: "5.9K",
+    likes: "144.3K",
+    videos: "222",
   },
 };
 
-export type Division = {
-  slug: string;
-  name: string;
-  short: string;
-  desc: string;
-  image: string;
-  status: "active" | "coming";
-};
-
-export const DIVISIONS: Division[] = [
+export const DIVISIONS = [
   {
     slug: "photography",
-    name: "ELITE PHOTOGRAPHY",
-    short: "Portraits · Fashion · Events · Commercial · Editorial",
-    desc: "Professional photography as an artistic discipline — portraits, fashion, events, commercial and editorial imagery crafted with intention.",
-    image:
-      "https://images.unsplash.com/photo-1493863641943-9b68992a8d07?q=80&w=1600&auto=format&fit=crop",
-    status: "active",
-  },
-  {
-    slug: "audio",
-    name: "ELITE AUDIO",
-    short: "Recording · Vocal Production · Mixing · Mastering",
-    desc: "Audio recording, vocal production, music production, mixing and mastering — where sound becomes experience.",
-    image:
-      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1600&auto=format&fit=crop",
-    status: "active",
+    name: "Photography",
+    status: "VERIFIED",
+    line: "Portraits, fashion, graduation, lifestyle and event photography — lit with intention.",
+    image: "/media/photos/hero_studio_cream.jpg",
   },
   {
     slug: "videography",
-    name: "ELITE VISUALS",
-    short: "Music Videos · Creative Film · Promo Production",
-    desc: "Videography, music videos, creative films and promotional video production with a cinematic eye.",
-    image:
-      "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?q=80&w=1600&auto=format&fit=crop",
-    status: "active",
+    name: "Videography",
+    status: "VERIFIED",
+    line: "Music videos, creative films and behind-the-scenes production.",
+    image: "/media/photos/music_live_singer.jpg",
+  },
+  {
+    slug: "audio",
+    name: "Audio & Sound",
+    status: "[EDITABLE]",
+    line: "Recording, production, mixing and mastering — to be confirmed by the studio.",
+    image: "/media/photos/portrait_soft.jpg",
   },
   {
     slug: "entertainment",
-    name: "ELITE ENTERTAINMENT",
-    short: "DJs · Live Performers · Event Entertainment",
-    desc: "Entertainment bookings, DJs, live performers, musicians and event entertainment — confirmed on booking.",
-    image:
-      "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=1600&auto=format&fit=crop",
-    status: "active",
-  },
-  {
-    slug: "talent",
-    name: "ELITE TALENT",
-    short: "Artist Development · Representation · Collaboration",
-    desc: "Artist development, talent representation, management and collaborations — built on trust and craft.",
-    image:
-      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1600&auto=format&fit=crop",
-    status: "active",
-  },
-  {
-    slug: "events",
-    name: "ELITE EVENTS",
-    short: "Creative Production · Entertainment Experiences",
-    desc: "Event creative production and entertainment experiences for corporate and private celebrations.",
-    image:
-      "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1600&auto=format&fit=crop",
-    status: "active",
+    name: "Entertainment",
+    status: "[EDITABLE]",
+    line: "Live sessions, artist collaborations and event entertainment.",
+    image: "/media/photos/portrait_red_shirt.jpg",
   },
 ];
 
@@ -101,111 +78,118 @@ export type Project = {
   title: string;
   category: string;
   year: string;
-  desc: string;
   image: string;
+  video?: string;
+  desc: string;
   credits: string;
-  featured?: boolean;
+  views?: string;
 };
 
-/** [EDITABLE] Showcase placeholders — replace with real Elite Studios projects via /admin */
+/** Real published work from @eliteprostudios — captions and view counts verified. */
 export const PROJECTS: Project[] = [
   {
-    slug: "golden-hour-portraits",
-    title: "Golden Hour — Portrait Series",
-    category: "Photography",
-    year: "2025",
-    desc: "A portrait series exploring light, identity and presence. Shot on location in Kampala.",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1600&auto=format&fit=crop",
-    credits: "Photography · Elite Studios",
-    featured: true,
-  },
-  {
-    slug: "studio-sessions-vol1",
-    title: "Studio Sessions Vol. 1",
-    category: "Audio",
-    year: "2025",
-    desc: "Recording sessions capturing raw vocal performances and live instrumentation.",
-    image:
-      "https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=1600&auto=format&fit=crop",
-    credits: "Audio · Elite Studios",
-    featured: true,
-  },
-  {
-    slug: "kampala-in-motion",
-    title: "Kampala In Motion",
-    category: "Film",
-    year: "2025",
-    desc: "A short film celebrating the rhythm and colour of the city.",
-    image:
-      "https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1600&auto=format&fit=crop",
-    credits: "Film · Elite Studios",
-    featured: true,
-  },
-  {
-    slug: "fashion-editorial",
-    title: "Fashion Editorial",
-    category: "Photography",
-    year: "2024",
-    desc: "Editorial fashion imagery — bold, minimal, unapologetically Ugandan.",
-    image:
-      "https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1600&auto=format&fit=crop",
-    credits: "Photography · Elite Studios",
-  },
-  {
-    slug: "live-at-elite",
-    title: "Live At Elite",
+    slug: "coco-must-shine",
+    title: "Coco Must Shine",
     category: "Entertainment",
-    year: "2024",
-    desc: "Live performance evenings — DJs, bands and emerging voices.",
-    image:
-      "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1600&auto=format&fit=crop",
-    credits: "Entertainment · Elite Studios",
+    year: "2026",
+    image: "/media/photos/film_bts_set.jpg",
+    video: "/media/videos/web_bts_coco.mp4",
+    desc: "Behind the scenes on set with Fey Tusha and Queen Minah — a full creative production day, from lighting build to final take.",
+    credits: "Featuring @Fey Tusha, @Queen Minah",
+    views: "367.3K",
   },
   {
-    slug: "brand-stories",
-    title: "Brand Stories",
-    category: "Commercial",
-    year: "2024",
-    desc: "Commercial photography and film for brands that want to be remembered.",
-    image:
-      "https://images.unsplash.com/photo-1493397212122-2b85dda8106b?q=80&w=1600&auto=format&fit=crop",
-    credits: "Commercial · Elite Studios",
+    slug: "studio-portrait-series",
+    title: "Studio Portrait Series",
+    category: "Photography",
+    year: "2026",
+    image: "/media/photos/hero_studio_cream.jpg",
+    desc: "Editorial portraiture on the Elite Studios set: cream draping, gold accents and a red-lit arch backdrop.",
+    credits: "Elite Studios — photography & art direction",
+    views: "473",
+  },
+  {
+    slug: "zayra-baby-session",
+    title: "Zayra Baby Session",
+    category: "Photography",
+    year: "2026",
+    image: "/media/photos/portrait_black_dress.jpg",
+    video: "/media/videos/web_bts_zayra.mp4",
+    desc: "Behind the scenes on a portrait session — posing direction, lighting and the studio workflow in motion.",
+    credits: "Elite Studios — photography",
+    views: "204.9K",
+  },
+  {
+    slug: "imba-sessions-aroma",
+    title: "Imba Sessions — AROMA",
+    category: "Entertainment",
+    year: "2026",
+    image: "/media/photos/music_live_singer.jpg",
+    video: "/media/videos/web_aroma_elite.mp4",
+    desc: "Live vocal session captured by Elite Studios for the Imba Sessions series — a singer mid-phrase under warm stage light.",
+    credits: "Performance: AROMA · Film: Elite Studios",
+    views: "810",
+  },
+  {
+    slug: "graduation-shoot",
+    title: "Graduation Shoot",
+    category: "Photography",
+    year: "2026",
+    image: "/media/photos/portrait_denim.jpg",
+    video: "/media/videos/web_grad_shoot.mp4",
+    desc: "Graduation portrait session — clean styling, confident poses and a polished final frame.",
+    credits: "Elite Studios — photography",
+    views: "499",
+  },
+  {
+    slug: "green-dress-duo",
+    title: "Green Dress Duo",
+    category: "Photography",
+    year: "2026",
+    image: "/media/photos/portrait_striped.jpg",
+    desc: "An outdoor editorial duo shoot — colour, movement and natural light in the garden set.",
+    credits: "Elite Studios — photography",
+  },
+  {
+    slug: "on-set-stories",
+    title: "On Set Stories",
+    category: "Film",
+    year: "2026",
+    image: "/media/photos/portrait_red_shirt.jpg",
+    video: "/media/videos/web_reply_sherry.mp4",
+    desc: "The crew at work — lighting stands, camera rigs and the moments between takes.",
+    credits: "Elite Studios production team",
+    views: "263.7K",
   },
 ];
 
 export const PROCESS = [
-  { n: "01", t: "DISCOVER", d: "We listen first. Your vision, your story, your goals — understood before a single frame is shot or note recorded." },
-  { n: "02", t: "PLAN", d: "Creative direction and a production plan: mood, references, schedule and budget — agreed together, in writing." },
-  { n: "03", t: "CREATE", d: "Execution with craft — photography, recording or entertainment, directed with precision and care." },
-  { n: "04", t: "REFINE", d: "Review, select and polish. We refine until the work feels inevitable." },
-  { n: "05", t: "DELIVER", d: "Final professional delivery — files, formats and support, ready for the world." },
+  { n: "01", t: "BRIEF", d: "Tell us the vision — the mood, the references, the deadline. We listen first." },
+  { n: "02", t: "PLAN", d: "We shape the shoot or session: styling, lighting, locations and schedule." },
+  { n: "03", t: "PRODUCE", d: "Production day — camera, lights, sound and direction, handled end to end." },
+  { n: "04", t: "EDIT", d: "Colour grading, retouching and audio polish to the studio standard." },
+  { n: "05", t: "DELIVER", d: "Final files delivered, ready to post, print or distribute." },
 ];
 
 export const FOUNDER = {
-  // [EDITABLE] — founder name/bio MUST be confirmed by the administrator. Do not publish placeholders.
-  name: "Founder & CEO",
-  title: "Founder and CEO, Elite Studios",
-  bio: "Elite Studios is the founder's major creative venture — a home for photography, sound and visual storytelling in Kungu, Kampala. The vision is simple: world-class creative production, made in Uganda, for Uganda and the world.",
-  philosophy: "Creativity with discipline. Excellence without compromise. Every project is a promise — to create something worth remembering.",
-  image:
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1200&auto=format&fit=crop",
+  // NOT VERIFIED — never invent a founder's name. Admin must confirm.
+  name: "[EDITABLE] Founder name",
+  title: "Founder & Creative Director",
+  image: "/media/photos/film_bts_set.jpg",
+  bio: "Elite Studios is built on a simple belief: every client deserves work that looks like it belongs on a national stage. Our team photographs, films and produces in Kampala, Uganda — bringing lighting, direction and post-production together under one roof.",
+  philosophy: "Create with intention. Produce with discipline. Entertain with soul.",
 };
 
-export const SERVICES_PRICING_NOTE =
-  "Pricing is confirmed per project. Request a quote for a tailored package — no hidden costs, ever.";
+export const TALENT = {
+  note: "Artist and collaborator profiles are only published with the studio's confirmed permission. Collaborations visible on our social channels include @Fey Tusha, @Queen Minah, @SHADAH_UG and @C.O.C.O.",
+};
 
 export const NAV = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Photography", href: "/photography" },
-  { label: "Audio", href: "/audio" },
-  { label: "Film", href: "/videography" },
-  { label: "Entertainment", href: "/entertainment" },
-  { label: "Talent", href: "/talent" },
-  { label: "Events", href: "/events" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Founder", href: "/founder" },
-  { label: "Process", href: "/process" },
-  { label: "Contact", href: "/contact" },
+  { href: "/portfolio", label: "Work" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/photography", label: "Photography" },
+  { href: "/videography", label: "Videography" },
+  { href: "/about", label: "About" },
+  { href: "/process", label: "Process" },
+  { href: "/contact", label: "Contact" },
 ];

@@ -14,9 +14,16 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Elite Studios Kungu — Create. Produce. Entertain.",
-    description: SITE.support,
+    description: SITE.taglineVerified,
     type: "website",
     locale: "en_UG",
+    images: [{ url: "/media/photos/hero_studio_cream.jpg", width: 1165, height: 1600, alt: "Elite Studios editorial portrait" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Elite Studios Kungu — Create. Produce. Entertain.",
+    description: SITE.taglineVerified,
+    images: ["/media/photos/hero_studio_cream.jpg"],
   },
   robots: { index: true, follow: true },
 };
@@ -38,10 +45,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               name: "Elite Studios Kungu",
-              description: SITE.support,
+              alternateName: "@eliteprostudios",
+              description: SITE.taglineVerified,
               address: { "@type": "PostalAddress", addressLocality: "Kungu, Kampala", addressCountry: "UG" },
+              areaServed: "Kampala, Uganda",
               telephone: SITE.phone,
-              email: SITE.email,
+              image: "https://elitestudios.ug/media/photos/hero_studio_cream.jpg",
+              priceRange: "Quote on request",
+              sameAs: [SITE.socials.tiktok, SITE.socials.instagram],
             }),
           }}
         />

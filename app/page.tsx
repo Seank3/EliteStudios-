@@ -2,11 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowDown, Camera, AudioLines, Clapperboard, PartyPopper, Star, CalendarDays, Play, ChevronRight } from "lucide-react";
 import Reveal from "@/components/Reveal";
+import VideoReel from "@/components/VideoReel";
 import { DIVISIONS, PROJECTS, PROCESS, FOUNDER, SITE } from "@/lib/content";
 
-const HERO_IMG = "https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=2400&auto=format&fit=crop";
-const STUDIO_IMG = "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1600&auto=format&fit=crop";
-const PHOTO_IMG = "https://images.unsplash.com/photo-1493863641943-9b68992a8d07?q=80&w=1600&auto=format&fit=crop";
+const HERO_IMG = "/media/photos/hero_red_dress.jpg";
+const STUDIO_IMG = "/media/photos/music_live_singer.jpg";
+const PHOTO_IMG = "/media/photos/hero_studio_cream.jpg";
 
 export default function Home() {
   return (
@@ -21,7 +22,7 @@ export default function Home() {
             ELITE<br /><span className="italic text-gold">STUDIOS</span>
           </h1>
           <p className="font-mono tracking-[0.35em] text-sm md:text-lg mt-6 text-warmwhite">{SITE.tagline}</p>
-          <p className="max-w-xl text-silver text-base md:text-lg mt-5 leading-relaxed">{SITE.heroCopy}</p>
+          <p className="max-w-xl text-silver text-base md:text-lg mt-5 leading-relaxed">{SITE.taglineVerified}</p>
           <div className="flex flex-wrap gap-4 mt-10">
             <Link href="#world" className="inline-flex items-center gap-2 bg-gold text-obsidian font-semibold tracking-widest text-sm px-8 py-4 hover:bg-warmwhite transition">EXPLORE OUR WORLD <ArrowRight size={16} /></Link>
             <Link href="/book" className="inline-flex items-center gap-2 border border-white/30 tracking-widest text-sm px-8 py-4 hover:border-gold hover:text-gold transition">START A PROJECT</Link>
@@ -71,8 +72,7 @@ export default function Home() {
                   <div className="absolute inset-x-0 bottom-0 p-6">
                     <p className="font-mono text-[10px] tracking-[0.3em] text-gold">0{i + 1}</p>
                     <h3 className="font-display text-2xl mt-2">{d.name}</h3>
-                    <p className="text-silver text-xs tracking-widest mt-1">{d.short}</p>
-                    <p className="text-silver/80 text-sm mt-3 leading-relaxed line-clamp-2">{d.desc}</p>
+                    <p className="text-silver/80 text-sm mt-2 leading-relaxed line-clamp-2">{d.line}</p>
                     <span className="inline-flex items-center gap-1 text-gold text-xs tracking-widest mt-4 group-hover:gap-2 transition-all">EXPLORE <ArrowRight size={13} /></span>
                   </div>
                 </Link>
@@ -110,13 +110,51 @@ export default function Home() {
         </Reveal>
       </section>
 
+      {/* 04b SHOWREEL — real studio footage */}
+      <section className="bg-charcoal border-y border-white/10 py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-5 gap-10 items-center">
+          <Reveal className="md:col-span-3">
+            <VideoReel
+              heading="ON SET — ELITE STUDIOS"
+              sub="Real footage from @eliteprostudios on TikTok. 144.3K likes across 222 posts."
+              clips={[
+                { src: "/media/videos/web_bts_coco.mp4", poster: "/media/photos/bts_coco_poster.jpg", title: "Coco Must Shine", caption: "Behind the scenes with Fey Tusha and Queen Minah — full creative production day.", views: "367.3K" },
+                { src: "/media/videos/web_reply_sherry.mp4", poster: "/media/photos/reply_sherry_poster.jpg", title: "On Set Stories", caption: "Lighting stands, camera rigs and the moments between takes.", views: "263.7K" },
+                { src: "/media/videos/web_bts_zayra.mp4", poster: "/media/photos/bts_zayra_poster.jpg", title: "Zayra Baby Session", caption: "Posing direction and studio workflow, captured live.", views: "204.9K" },
+                { src: "/media/videos/web_aroma_elite.mp4", poster: "/media/photos/aroma_elite_poster.jpg", title: "Imba Sessions — AROMA", caption: "A live vocal session filmed by Elite Studios.", views: "810" },
+                { src: "/media/videos/web_grad_shoot.mp4", poster: "/media/photos/grad_shoot_poster.jpg", title: "Graduation Shoot", caption: "Graduation portrait session behind the scenes.", views: "499" },
+              ]}
+            />
+          </Reveal>
+          <Reveal className="md:col-span-2">
+            <p className="font-mono text-xs tracking-[0.35em] text-gold mb-4">04 — MOTION</p>
+            <h2 className="font-display font-light text-4xl md:text-5xl leading-tight">The work,<br /><span className="italic text-gold">in motion.</span></h2>
+            <p className="text-silver leading-relaxed mt-6">
+              Photography and videography are the heart of Elite Studios. These are our own published
+              shoots and sessions — real sets, real clients, real colour grades.
+            </p>
+            <dl className="grid grid-cols-3 gap-4 mt-8 border-t border-white/10 pt-6">
+              {[["5.9K", "Followers"], ["144.3K", "Likes"], ["222", "Posts"]].map(([v, l]) => (
+                <div key={l}>
+                  <dd className="font-display text-3xl text-gold">{v}</dd>
+                  <dt className="font-mono text-[10px] tracking-[0.2em] text-silver mt-1">{l.toUpperCase()}</dt>
+                </div>
+              ))}
+            </dl>
+            <a href="https://www.tiktok.com/@eliteprostudios" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-6 text-gold tracking-widest text-sm border-b border-gold pb-1">
+              FOLLOW ON TIKTOK <ArrowRight size={15} />
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
       {/* 05 PHOTOGRAPHY EXPERIENCE */}
       <section className="bg-charcoal border-y border-white/10 py-24 md:py-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 md:px-8 grid md:grid-cols-2 gap-12 items-center">
           <Reveal className="grid grid-cols-2 gap-4">
-            {["photo-1544005313-94ddf0286df2", "photo-1509631179647-0177331693ae", "photo-1516035069371-29a1b244cc32", "photo-1493863641943-9b68992a8d07"].map((id) => (
-              <div key={id} className="relative aspect-square overflow-hidden group">
-                <Image src={`https://images.unsplash.com/${id}?q=80&w=800&auto=format&fit=crop`} alt="Elite Photography" fill className="object-cover img-zoom" />
+            {["/media/photos/portrait_striped.jpg", "/media/photos/portrait_white_shirt.jpg", "/media/photos/portrait_black_dress.jpg", "/media/photos/portrait_denim.jpg"].map((src) => (
+              <div key={src} className="relative aspect-square overflow-hidden group">
+                <Image src={src} alt="Elite Studios photography" fill className="object-cover img-zoom" />
               </div>
             ))}
           </Reveal>
@@ -240,7 +278,7 @@ export default function Home() {
 
       {/* 11 FILM STRIP */}
       <section className="relative py-28 overflow-hidden">
-        <Image src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=2400&auto=format&fit=crop" alt="Elite Visuals film production" fill className="object-cover opacity-40" />
+        <Image src="/media/photos/film_bts_set.jpg" alt="Elite Studios film production" fill className="object-cover opacity-40" />
         <div className="absolute inset-0 bg-obsidian/60" />
         <div className="relative max-w-7xl mx-auto px-5 md:px-8 text-center">
           <Reveal>
